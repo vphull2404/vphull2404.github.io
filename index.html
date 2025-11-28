@@ -17,6 +17,7 @@
       line-height: 1.5;
     }
     .hero {
+      /* full viewport height hero (you can adjust) */
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -29,6 +30,7 @@
       font-size: 3rem;
       font-weight: bold;
       margin-bottom: 0.5em;
+      /* gradient text for part of it */
     }
     .hero h1 .highlight {
       background: linear-gradient(90deg, #ff7b00, #ff00c8);
@@ -40,23 +42,10 @@
       color: #ffffff;
       margin-bottom: 1em;
     }
-    .about-me {
+    .hero .description {
       max-width: 800px;
-      text-align: left;
-      margin-top: 40px;
-      padding: 20px;
-      background: #2a3a51;
-      border-radius: 12px;
-    }
-    .about-me h2 {
-      font-size: 2rem;
-      color: #ffffff;
-      margin-bottom: 15px;
-    }
-    .about-me p {
       font-size: 1.1rem;
       color: #c1c8ce;
-      line-height: 1.6;
     }
 
     @media (max-width: 768px) {
@@ -66,10 +55,7 @@
       .hero .subtitle {
         font-size: 1.3rem;
       }
-      .about-me h2 {
-        font-size: 1.6rem;
-      }
-      .about-me p {
+      .hero .description {
         font-size: 1rem;
       }
     }
@@ -78,11 +64,7 @@
 <body>
   <section class="hero">
     <h1>I am <span class="highlight">B2B/B2C Digital Marketer</span> and <span class="subtitle">MBA (Marketing)</span></h1>
-  </section>
-
-  <section class="about-me">
-    <h2>About Me</h2>
-    <p>Digital Marketing Leader & Brand Growth Strategist specializing in paid ads, automation, and analytics. I run high-performing campaigns on Google, LinkedIn, and Facebook to drive measurable brand growth.</p>
+    <p class="description"> ABOUT ME: Digital Marketing Leader & Brand Growth Strategist specializing in paid ads, automation, and analytics. I run high-performing campaigns on Google, LinkedIn, and Facebook to drive measurable brand growth.</p>
   </section>
 </body>
 </html>
