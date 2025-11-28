@@ -11,10 +11,26 @@
     background-color: #1a2537;
     color: #c1c8ce;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
     min-height: 100vh;
-    padding: 20px;
+    padding: 40px 20px;
+  }
+
+  /* Name and subtitle above the card */
+  .header-name {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .header-name h1 {
+    font-size: 36px;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+  .header-name h2 {
+    font-size: 20px;
+    color: #c1c8ce;
   }
 
   /* Main card */
@@ -86,12 +102,22 @@
   @media (max-width: 768px) {
     .main-card { flex-direction: column; }
     .hero { font-size: 22px; text-align: center; }
-    .hero .text { white-space: normal; } /* allow wrapping on small screens */
+    .hero .text { white-space: normal; }
     .about-me h2, .about-me p { text-align: center; }
+    .header-name h1 { font-size: 28px; }
+    .header-name h2 { font-size: 18px; }
   }
 </style>
 </head>
 <body>
+
+  <!-- Name and subtitle above the main card -->
+  <div class="header-name">
+    <h1>Your Name</h1>
+    <h2>B2B/B2C Digital Marketer</h2>
+  </div>
+
+  <!-- Main card with hero and About Me -->
   <div class="main-card">
     <!-- Left Column: Hero -->
     <div class="hero">
@@ -106,5 +132,6 @@
       <p>Digital Marketing Leader & Brand Growth Strategist specializing in paid ads, automation, and analytics. I run high-performing campaigns on Google, LinkedIn, and Facebook to drive measurable brand growth.</p>
     </div>
   </div>
+
 </body>
 </html>
