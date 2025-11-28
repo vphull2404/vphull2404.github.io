@@ -16,9 +16,10 @@
       font-family: Arial, sans-serif;
       line-height: 1.5;
     }
+
+    /* Hero section */
     .hero {
-      /* full viewport height hero (you can adjust) */
-      min-height: 100vh;
+      min-height: 80vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -30,7 +31,6 @@
       font-size: 3rem;
       font-weight: bold;
       margin-bottom: 0.5em;
-      /* gradient text for part of it */
     }
     .hero h1 .highlight {
       background: linear-gradient(90deg, #ff7b00, #ff00c8);
@@ -40,12 +40,29 @@
     .hero .subtitle {
       font-size: 1.5rem;
       color: #ffffff;
-      margin-bottom: 1em;
     }
-    .hero .description {
-      max-width: 800px;
+
+    /* About Me section */
+    .about-me {
+      background: #2a3a51;
+      padding: 40px;
+      border-radius: 12px;
+      max-width: 900px;
+      width: 90%;
+      margin: 40px auto; /* centers the box */
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+    .about-me h2 {
+      font-size: 2rem;
+      color: #ffffff;
+      margin-bottom: 20px;
+      text-align: center; /* centered heading */
+    }
+    .about-me p {
       font-size: 1.1rem;
       color: #c1c8ce;
+      line-height: 1.6;
+      text-align: center; /* centered text */
     }
 
     @media (max-width: 768px) {
@@ -55,7 +72,10 @@
       .hero .subtitle {
         font-size: 1.3rem;
       }
-      .hero .description {
+      .about-me h2 {
+        font-size: 1.6rem;
+      }
+      .about-me p {
         font-size: 1rem;
       }
     }
@@ -64,7 +84,11 @@
 <body>
   <section class="hero">
     <h1>I am <span class="highlight">B2B/B2C Digital Marketer</span> and <span class="subtitle">MBA (Marketing)</span></h1>
-    <p class="description"> ABOUT ME Digital Marketing Leader & Brand Growth Strategist specializing in paid ads, automation, and analytics. I run high-performing campaigns on Google, LinkedIn, and Facebook to drive measurable brand growth.</p>
+  </section>
+
+  <section class="about-me">
+    <h2>About Me</h2>
+    <p>Digital Marketing Leader & Brand Growth Strategist specializing in paid ads, automation, and analytics. I run high-performing campaigns on Google, LinkedIn, and Facebook to drive measurable brand growth.</p>
   </section>
 </body>
 </html>
