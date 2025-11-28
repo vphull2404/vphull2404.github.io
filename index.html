@@ -1,89 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio — Digital Marketer</title>
   <style>
-    /* General reset */
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body { 
-      font-family: Arial, sans-serif; 
-      background-color: #1a2537; 
-      color: #c1c8ce; 
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1a2537;
+      color: #c1c8ce;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
     }
 
-    /* Hero section */
+    /* Main card */
+    .main-card {
+      background-color: #2a3a51;
+      border-radius: 12px;
+      padding: 40px;
+      display: flex;
+      gap: 40px;
+      max-width: 900px;
+      width: 100%;
+      flex-wrap: wrap; /* for responsiveness */
+    }
+
+    /* Left column (heading) */
     .hero {
+      flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
-      min-height: 80vh;
-      text-align: center;
-      padding: 0 20px;
-    }
-    .hero h1 {
-      font-size: 3rem;
+      font-size: 32px;
       font-weight: bold;
-      margin-bottom: 0.5em;
+      line-height: 1.3;
     }
-    .hero h1 .highlight {
+    .hero .highlight {
       background: linear-gradient(90deg, #ff7b00, #ff00c8);
       -webkit-background-clip: text;
       color: transparent;
     }
     .hero .subtitle {
-      font-size: 1.5rem;
       color: #ffffff;
     }
 
-    /* About Me card */
-    .about-me-container {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 80px; /* spacing from bottom */
-    }
+    /* Right column (About Me) */
     .about-me {
-      background: #2a3a51;
-      padding: 40px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: #354459;
+      padding: 20px;
       border-radius: 12px;
-      max-width: 900px;
-      width: 90%;
-      text-align: center;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     }
     .about-me h2 {
-      font-size: 2rem;
+      font-size: 24px;
       color: #ffffff;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
+      text-align: left;
     }
     .about-me p {
-      font-size: 1.1rem;
+      font-size: 16px;
       color: #c1c8ce;
       line-height: 1.6;
+      text-align: left;
     }
 
     /* Responsive */
     @media (max-width: 768px) {
-      .hero h1 { font-size: 2.2rem; }
-      .hero .subtitle { font-size: 1.3rem; }
-      .about-me h2 { font-size: 1.6rem; }
-      .about-me p { font-size: 1rem; }
-    }
-  </style>
-</head>
-<body>
-  <section class="hero">
-    <h1>I am <span class="highlight">B2B/B2C Digital Marketer</span> and <span class="subtitle">MBA (Marketing)</span></h1>
-  </section>
-
-  <!-- About Me Card -->
-  <div class="about-me-container">
-    <section class="about-me">
-      <h2>About Me</h2>
-      <p>Digital Marketing Leader & Brand Growth Strategist specializing in paid ads, automation, and analytics. I run high-performing campaigns on Google, LinkedIn, and Facebook to drive measurable brand growth.</p>
-    </section>
-  </div>
-</body>
-</html>
+      .main-card {
+        flex-direction: column;
+      }
+      .hero {
+        font-size: 24px;
+        text-ali
