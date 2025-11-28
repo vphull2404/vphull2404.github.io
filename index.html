@@ -12,25 +12,42 @@
     color: #c1c8ce;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
-    min-height: 100vh;
     padding: 40px 20px;
   }
 
-  /* Name and subtitle above the card */
-  .header-name {
-    text-align: center;
-    margin-bottom: 30px;
+  /* Header with name and square */
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 40px;
   }
-  .header-name h1 {
+  .header-square {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #ff7b00, #ff00c8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    border-radius: 8px;
+  }
+  .header-text {
+    display: flex;
+    flex-direction: column;
+  }
+  .header-text h1 {
     font-size: 36px;
-    color: #ffffff;
-    margin-bottom: 10px;
+    color: white;
+    line-height: 1.1;
   }
-  .header-name h2 {
-    font-size: 20px;
+  .header-text h2 {
+    font-size: 18px;
     color: #c1c8ce;
+    margin-top: 5px;
   }
 
   /* Main card */
@@ -46,7 +63,7 @@
     box-shadow: 0 15px 35px rgba(0,0,0,0.5);
   }
 
-  /* Left column (heading) */
+  /* Left column (hero sentence) */
   .hero {
     flex: 1;
     display: flex;
@@ -55,8 +72,6 @@
     font-size: 28px;
     font-weight: bold;
     line-height: 1.3;
-  }
-  .hero .text {
     white-space: nowrap; /* keep sentence on one line */
   }
   .highlight {
@@ -100,33 +115,31 @@
 
   /* Responsive */
   @media (max-width: 768px) {
-    .main-card { flex-direction: column; }
-    .hero { font-size: 22px; text-align: center; }
-    .hero .text { white-space: normal; }
+    .header { flex-direction: column; align-items: center; gap: 15px; }
+    .hero { font-size: 22px; white-space: normal; text-align: center; }
     .about-me h2, .about-me p { text-align: center; }
-    .header-name h1 { font-size: 28px; }
-    .header-name h2 { font-size: 18px; }
   }
 </style>
 </head>
 <body>
 
-  <!-- Name and subtitle above the main card -->
-  <div class="header-name">
-    <h1>Varun Phull</h1>
-    <h2>B2B/B2C Digital Marketer</h2>
+  <!-- Header with square and name -->
+  <div class="header">
+    <div class="header-square">VP</div>
+    <div class="header-text">
+      <h1>Varun Phull</h1>
+      <h2>B2B/B2C Digital Marketer</h2>
+    </div>
   </div>
 
-  <!-- Main card with hero and About Me -->
+  <!-- Main card with hero sentence and About Me side by side -->
   <div class="main-card">
-    <!-- Left Column: Hero -->
+    <!-- Left column: hero sentence -->
     <div class="hero">
-      <div class="text">
-        I am <span class="highlight">B2B/B2C Digital Marketer</span> and <span class="subtitle">MBA (Marketing)</span>
-      </div>
+      I am <span class="highlight">B2B/B2C Digital Marketer</span> and <span class="subtitle">MBA (Marketing)</span>
     </div>
 
-    <!-- Right Column: About Me -->
+    <!-- Right column: About Me -->
     <div class="about-me">
       <h2>About Me</h2>
       <p>Digital Marketing Leader & Brand Growth Strategist specializing in paid ads, automation, and analytics. I run high-performing campaigns on Google, LinkedIn, and Facebook to drive measurable brand growth.</p>
