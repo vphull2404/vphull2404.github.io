@@ -12,16 +12,17 @@
     color: #c1c8ce;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start; /* align everything to left */
     padding: 40px 20px;
   }
 
-  /* Header with square and name */
+  /* Header with square and name aligned left */
   .header {
     display: flex;
     align-items: center;
     gap: 20px;
     margin-bottom: 40px;
+    align-self: flex-start; /* keep header at left even if body center changes */
   }
   .header-square {
     width: 60px;
@@ -114,10 +115,8 @@
 
   /* Responsive */
   @media (max-width: 768px) {
-    .main-card {
-      flex-direction: column;
-      gap: 20px;
-    }
+    body { align-items: center; } /* center on mobile for better layout */
+    .header { flex-direction: column; align-items: center; gap: 15px; align-self: center; }
     .hero, .about-me {
       flex: 1 1 100%;
       justify-content: center;
@@ -131,7 +130,7 @@
 </head>
 <body>
 
-  <!-- Header with square and name -->
+  <!-- Header with square and name aligned left -->
   <div class="header">
     <div class="header-square">VP</div>
     <div class="header-text">
