@@ -6,6 +6,7 @@
 <title>Portfolio — Digital Marketer</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
+
   body {
     font-family: Arial, sans-serif;
     background-color: #1a2537;
@@ -16,7 +17,7 @@
     padding: 40px 20px;
   }
 
-  /* Header with name and square */
+  /* Header with square and name */
   .header {
     display: flex;
     align-items: center;
@@ -34,6 +35,7 @@
     font-weight: bold;
     font-size: 24px;
     border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
   }
   .header-text {
     display: flex;
@@ -56,23 +58,24 @@
     border-radius: 12px;
     padding: 40px;
     display: flex;
+    flex-direction: row; /* ensures row layout */
     gap: 40px;
     max-width: 900px;
     width: 100%;
-    flex-wrap: wrap;
     box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    flex-wrap: nowrap; /* prevent wrapping */
   }
 
   /* Left column (hero sentence) */
   .hero {
-    flex: 1;
+    flex: 1; /* take 50% width */
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     font-size: 28px;
     font-weight: bold;
     line-height: 1.3;
-    white-space: nowrap; /* keep sentence on one line */
+    white-space: nowrap; /* keep sentence in one line */
   }
   .highlight {
     background: linear-gradient(90deg, #ff7b00, #ff00c8);
@@ -85,7 +88,7 @@
 
   /* Right column (About Me) */
   .about-me {
-    flex: 1;
+    flex: 1; /* take 50% width */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -104,20 +107,28 @@
     font-size: 24px;
     color: #ffffff;
     margin-bottom: 15px;
-    text-align: left;
   }
   .about-me p {
     font-size: 16px;
     color: #c1c8ce;
     line-height: 1.6;
-    text-align: left;
   }
 
   /* Responsive */
   @media (max-width: 768px) {
-    .header { flex-direction: column; align-items: center; gap: 15px; }
-    .hero { font-size: 22px; white-space: normal; text-align: center; }
-    .about-me h2, .about-me p { text-align: center; }
+    .main-card {
+      flex-direction: column; /* stack vertically on small screens */
+      gap: 20px;
+    }
+    .hero {
+      justify-content: center;
+      text-align: center;
+      white-space: normal; /* allow wrapping */
+      font-size: 22px;
+    }
+    .about-me h2, .about-me p {
+      text-align: center;
+    }
   }
 </style>
 </head>
@@ -127,24 +138,11 @@
   <div class="header">
     <div class="header-square">VP</div>
     <div class="header-text">
-      <h1>Varun Phull</h1>
+      <h1>Your Name</h1>
       <h2>B2B/B2C Digital Marketer</h2>
     </div>
   </div>
 
   <!-- Main card with hero sentence and About Me side by side -->
   <div class="main-card">
-    <!-- Left column: hero sentence -->
-    <div class="hero">
-      I am <span class="highlight">B2B/B2C Digital Marketer</span> and <span class="subtitle">MBA (Marketing)</span>
-    </div>
-
-    <!-- Right column: About Me -->
-    <div class="about-me">
-      <h2>About Me</h2>
-      <p>Digital Marketing Leader & Brand Growth Strategist specializing in paid ads, automation, and analytics. I run high-performing campaigns on Google, LinkedIn, and Facebook to drive measurable brand growth.</p>
-    </div>
-  </div>
-
-</body>
-</html>
+    <!-- Left column: hero sentence
