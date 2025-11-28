@@ -1,94 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio — Digital Marketer</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #1a2537;
-      color: #c1c8ce;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      padding: 20px;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio — Digital Marketer</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #1a2537;
+    color: #c1c8ce;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
 
-    /* Main card */
+  /* Main card container */
+  .main-card {
+    background-color: #2a3a51;
+    border-radius: 12px;
+    padding: 40px;
+    display: flex;
+    gap: 40px;
+    max-width: 900px;
+    width: 100%;
+    flex-wrap: wrap;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5); /* shadow fixed */
+  }
+
+  /* Left column (heading) */
+  .hero {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 28px; /* slightly smaller to avoid line breaks */
+    font-weight: bold;
+    line-height: 1.3;
+    white-space: normal; /* allow natural wrapping */
+  }
+  .hero span {
+    display: inline; /* ensure all parts stay in line naturally */
+  }
+  .hero .highlight {
+    background: linear-gradient(90deg, #ff7b00, #ff00c8);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+  .hero .subtitle {
+    color: #ffffff;
+  }
+
+  /* Right column (About Me) */
+  .about-me {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #354459;
+    padding: 20px;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+  }
+  .about-me:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6); /* stronger shadow */
+    background-color: #3d5266;
+  }
+  .about-me h2 {
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  .about-me p {
+    font-size: 16px;
+    color: #c1c8ce;
+    line-height: 1.6;
+    text-align: left;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
     .main-card {
-      background-color: #2a3a51;
-      border-radius: 12px;
-      padding: 40px;
-      display: flex;
-      gap: 40px;
-      max-width: 900px;
-      width: 100%;
-      flex-wrap: wrap; /* for responsiveness */
+      flex-direction: column;
     }
-
-    /* Left column (heading) */
     .hero {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      font-size: 32px;
-      font-weight: bold;
-      line-height: 1.3;
+      font-size: 22px;
+      text-align: center;
     }
-    .hero .highlight {
-      background: linear-gradient(90deg, #ff7b00, #ff00c8);
-      -webkit-background-clip: text;
-      color: transparent;
+    .about-me h2, .about-me p {
+      text-align: center;
     }
-    .hero .subtitle {
-      color: #ffffff;
-    }
-
-    /* Right column (About Me) */
-    .about-me {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      background-color: #354459;
-      padding: 20px;
-      border-radius: 12px;
-    }
-    .about-me h2 {
-      font-size: 24px;
-      color: #ffffff;
-      margin-bottom: 15px;
-      text-align: left;
-    }
-    .about-me p {
-      font-size: 16px;
-      color: #c1c8ce;
-      line-height: 1.6;
-      text-align: left;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .main-card {
-        flex-direction: column;
-      }
-      .hero {
-        font-size: 24px;
-        text-align: center;
-      }
-      .about-me h2, .about-me p {
-        text-align: center;
-      }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
   <div class="main-card">
