@@ -1,29 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio — Digital Marketer</title>
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      background-color: #1a2537;
-      color: #c1c8ce;
-      font-family: Arial, sans-serif;
-      line-height: 1.5;
+    /* General reset */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { 
+      font-family: Arial, sans-serif; 
+      background-color: #1a2537; 
+      color: #c1c8ce; 
     }
 
     /* Hero section */
     .hero {
-      min-height: 80vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      min-height: 80vh;
       text-align: center;
       padding: 0 20px;
     }
@@ -42,42 +38,38 @@
       color: #ffffff;
     }
 
-    /* About Me section */
+    /* About Me card */
+    .about-me-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 80px; /* spacing from bottom */
+    }
     .about-me {
       background: #2a3a51;
       padding: 40px;
       border-radius: 12px;
       max-width: 900px;
       width: 90%;
-      margin: 40px auto; /* centers the box */
+      text-align: center;
       box-shadow: 0 8px 20px rgba(0,0,0,0.3);
     }
     .about-me h2 {
       font-size: 2rem;
       color: #ffffff;
       margin-bottom: 20px;
-      text-align: center; /* centered heading */
     }
     .about-me p {
       font-size: 1.1rem;
       color: #c1c8ce;
       line-height: 1.6;
-      text-align: center; /* centered text */
     }
 
+    /* Responsive */
     @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2.2rem;
-      }
-      .hero .subtitle {
-        font-size: 1.3rem;
-      }
-      .about-me h2 {
-        font-size: 1.6rem;
-      }
-      .about-me p {
-        font-size: 1rem;
-      }
+      .hero h1 { font-size: 2.2rem; }
+      .hero .subtitle { font-size: 1.3rem; }
+      .about-me h2 { font-size: 1.6rem; }
+      .about-me p { font-size: 1rem; }
     }
   </style>
 </head>
@@ -86,9 +78,12 @@
     <h1>I am <span class="highlight">B2B/B2C Digital Marketer</span> and <span class="subtitle">MBA (Marketing)</span></h1>
   </section>
 
-  <section class="about-me">
-    <h2>About Me</h2>
-    <p>Digital Marketing Leader & Brand Growth Strategist specializing in paid ads, automation, and analytics. I run high-performing campaigns on Google, LinkedIn, and Facebook to drive measurable brand growth.</p>
-  </section>
+  <!-- About Me Card -->
+  <div class="about-me-container">
+    <section class="about-me">
+      <h2>About Me</h2>
+      <p>Digital Marketing Leader & Brand Growth Strategist specializing in paid ads, automation, and analytics. I run high-performing campaigns on Google, LinkedIn, and Facebook to drive measurable brand growth.</p>
+    </section>
+  </div>
 </body>
 </html>
