@@ -6,7 +6,6 @@
 <title>Portfolio — Digital Marketer</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
   body {
     font-family: Arial, sans-serif;
     background-color: #1a2537;
@@ -58,24 +57,23 @@
     border-radius: 12px;
     padding: 40px;
     display: flex;
-    flex-direction: row; /* ensures row layout */
+    flex-direction: row;
     gap: 40px;
     max-width: 900px;
     width: 100%;
     box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-    flex-wrap: nowrap; /* prevent wrapping */
   }
 
   /* Left column (hero sentence) */
   .hero {
-    flex: 1; /* take 50% width */
+    flex: 0 0 40%; /* allocate 40% width */
     display: flex;
     justify-content: flex-start;
     align-items: center;
     font-size: 28px;
     font-weight: bold;
     line-height: 1.3;
-    white-space: nowrap; /* keep sentence in one line */
+    white-space: nowrap;
   }
   .highlight {
     background: linear-gradient(90deg, #ff7b00, #ff00c8);
@@ -88,7 +86,7 @@
 
   /* Right column (About Me) */
   .about-me {
-    flex: 1; /* take 50% width */
+    flex: 0 0 60%; /* allocate 60% width */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -117,18 +115,17 @@
   /* Responsive */
   @media (max-width: 768px) {
     .main-card {
-      flex-direction: column; /* stack vertically on small screens */
+      flex-direction: column;
       gap: 20px;
     }
-    .hero {
+    .hero, .about-me {
+      flex: 1 1 100%;
       justify-content: center;
       text-align: center;
-      white-space: normal; /* allow wrapping */
-      font-size: 22px;
+      white-space: normal;
     }
-    .about-me h2, .about-me p {
-      text-align: center;
-    }
+    .hero { font-size: 22px; }
+    .about-me h2, .about-me p { text-align: center; }
   }
 </style>
 </head>
@@ -138,7 +135,7 @@
   <div class="header">
     <div class="header-square">VP</div>
     <div class="header-text">
-      <h1>Varun Phull</h1>
+      <h1>Your Name</h1>
       <h2>B2B/B2C Digital Marketer</h2>
     </div>
   </div>
