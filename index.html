@@ -1,253 +1,170 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Your Name — Portfolio</title>
-  <meta name="description" content="Portfolio — Your Name | Frontend Developer" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Varun Phull | Digital Marketing Manager</title>
   <style>
-    :root{
-      --bg: #2a3a50;
-      --card: #192638;
-      --muted: #9fb0c6;
-      --accent: #2ec4b6;
-      --glass: rgba(255,255,255,0.03);
-      --text: #e6f0f6;
-      --max-width: 1000px;
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0e1525;
+      color: #ffffff;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%;}
-    body{
-      margin:0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-      background: linear-gradient(180deg,var(--bg), #213247 120%);
-      color:var(--text);
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-      line-height:1.5;
+    header {
+      padding: 80px 40px;
+      text-align: center;
     }
-
-    .container{max-width:var(--max-width);margin:0 auto;padding:36px 20px;}
-
-    /* Header / Nav */
-    header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 0}
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{width:44px;height:44px;border-radius:8px;background:var(--card);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--accent);font-size:18px}
-    .brand h1{margin:0;font-size:1.1rem}
-    nav ul{display:flex;gap:12px;list-style:none;margin:0;padding:0}
-    nav a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:8px;font-size:0.95rem}
-    nav a:hover, nav a.active{color:var(--text);background:var(--glass)}
-
-    /* Hero */
-    .hero{display:flex;flex-direction:column;gap:18px;padding:28px 0}
-    .hero .intro{display:flex;gap:20px;align-items:center}
-    .intro .left{flex:1}
-    .intro h2{margin:0;font-size:1.9rem}
-    .intro p{margin:8px 0 0;color:var(--muted)}
-    .cta{margin-top:12px}
-    .btn{display:inline-block;background:var(--accent);color:#072627;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600}
-
-    /* Grid / Cards */
-    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:18px}
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);padding:18px;border-radius:12px;transition:transform .35s cubic-bezier(.2,.9,.2,1), box-shadow .35s, background .35s;backdrop-filter:blur(6px)}
-    .card:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 18px 40px rgba(5,10,20,0.5);background:linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.015))}
-    .card h3{margin:0 0 8px}
-    .muted{color:var(--muted);font-size:0.95rem}
-
-    /* Projects */
-    .projects .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
-    .tag{font-size:0.8rem;padding:6px 8px;border-radius:999px;background:rgba(255,255,255,0.02);color:var(--muted);border:1px solid rgba(255,255,255,0.02)}
-    .project-links{margin-top:12px}
-    .project-links a{color:var(--accent);text-decoration:none;margin-right:12px}
-
-    /* Sections */
-    section{padding:26px 0;border-top:1px solid rgba(255,255,255,0.02)}
-    section h2{margin:0 0 12px}
-
-    /* Footer */
-    footer{padding:28px 0;color:var(--muted);font-size:0.95rem}
-
-    /* Responsive */
-    @media (min-width:900px){
-      .hero{flex-direction:row;align-items:center}
-      .intro h2{font-size:2.4rem}
+    h1 span.gradient {
+      background: linear-gradient(90deg, #ff7b00, #ff00c8);
+      -webkit-background-clip: text;
+      color: transparent;
     }
-
-    /* Smooth scroll active state detection (simple) */
-    html{scroll-behavior:smooth}
-
-    /* small helper */
-    .small{font-size:0.9rem;color:var(--muted)}
-
-    /* contact card */
-    .contact-card{display:flex;flex-direction:column;gap:10px}
-    .contact-card a{color:var(--accent);text-decoration:none}
-
-    /* subtle separator */
-    .sep{height:1px;background:rgba(255,255,255,0.02);margin:14px 0;border-radius:2px}
+    section {
+      padding: 60px 40px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    h2 { color: #8ab4f8; margin-bottom: 30px; }
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .card {
+      background: #1c2333;
+      padding: 20px;
+      border-radius: 12px;
+      flex: 1 1 300px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    }
+    ul { padding-left: 20px; }
   </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <div class="brand">
-        <div class="logo">Y</div>
-        <div>
-          <h1>Your Name</h1>
-          <div class="small">Frontend Developer • Location</div>
-        </div>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="#home" class="nav-link">Home</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#experience" class="nav-link">Experience</a></li>
-          <li><a href="#skills" class="nav-link">Skills</a></li>
-          <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
+<header>
+  <h1>Hi, I'm Varun Phull — I create marketing that <span class="gradient">tells stories</span> and drives results.</h1>
+  <p>Digital Marketing Leader & Brand Growth Strategist</p>
+</header>
 
-    <main>
-      <section id="home" class="hero">
-        <div class="intro">
-          <div class="left">
-            <h2>Hello — I’m <strong>Your Name</strong></h2>
-            <p class="muted">I build modern, accessible, and responsive web apps. I focus on frontend engineering and user experience.</p>
-            <div class="cta">
-              <a class="btn" href="#projects">See projects</a>
-            </div>
-          </div>
-          <div class="right small muted" style="min-width:220px;text-align:right">
-            <div>Available for work • Open to opportunities</div>
-            <div style="margin-top:10px">Email: <a href="mailto:you@example.com" style="color:var(--accent)">you@example.com</a></div>
-          </div>
-        </div>
-      </section>
-
-      <section id="about">
-        <h2>About</h2>
-        <div class="card">
-          <p>I’m a frontend developer with experience building production web applications. I enjoy learning new frameworks and creating accessible, performative interfaces.</p>
-          <div class="sep"></div>
-          <p class="small">Tech interests: performance, accessibility, React, design systems.</p>
-        </div>
-      </section>
-
-      <section id="experience">
-        <h2>Experience</h2>
-        <div class="grid">
-          <div class="card">
-            <h3>Frontend Engineer — Company A</h3>
-            <div class="muted">2022 — Present</div>
-            <p>Worked on the core UI, improved performance, and led accessibility efforts.</p>
-          </div>
-          <div class="card">
-            <h3>Web Developer — Company B</h3>
-            <div class="muted">2019 — 2022</div>
-            <p>Built customer-facing landing pages and interactive dashboards.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="skills">
-        <h2>Skills & Tools</h2>
-        <div class="grid">
-          <div class="card">
-            <h3>Frontend</h3>
-            <p class="muted">HTML • CSS • JavaScript • React • TypeScript</p>
-          </div>
-          <div class="card">
-            <h3>Tools</h3>
-            <p class="muted">Git • GitHub • Vercel • Figma</p>
-          </div>
-          <div class="card">
-            <h3>Other</h3>
-            <p class="muted">Accessibility • Testing • Performance</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="projects">
-        <h2>Projects</h2>
-        <div class="grid projects">
-          <article class="card">
-            <h3>Project One</h3>
-            <p class="muted">Short description of the project — what it does and your role.</p>
-            <div class="project-links">
-              <a href="#">Demo</a>
-              <a href="#">Code</a>
-            </div>
-            <div class="meta" style="margin-top:12px">
-              <span class="tag">React</span>
-              <span class="tag">CSS</span>
-            </div>
-          </article>
-
-          <article class="card">
-            <h3>Project Two</h3>
-            <p class="muted">Short description of the project and what technologies you used.</p>
-            <div class="project-links">
-              <a href="#">Demo</a>
-              <a href="#">Code</a>
-            </div>
-            <div class="meta" style="margin-top:12px">
-              <span class="tag">Vanilla JS</span>
-              <span class="tag">Netlify</span>
-            </div>
-          </article>
-
-          <article class="card">
-            <h3>Project Three</h3>
-            <p class="muted">Short description and results.</p>
-            <div class="project-links">
-              <a href="#">Demo</a>
-              <a href="#">Code</a>
-            </div>
-            <div class="meta" style="margin-top:12px">
-              <span class="tag">Node</span>
-              <span class="tag">Express</span>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section id="contact">
-        <h2>Contact</h2>
-        <div class="card contact-card">
-          <p class="small">Interested in working together? Reach out.</p>
-          <div>Email: <a href="mailto:you@example.com">you@example.com</a></div>
-          <div>LinkedIn: <a href="#">your-linkedin</a></div>
-        </div>
-      </section>
-
-    </main>
-
-    <footer>
-      <div class="small">Built with ❤️ • <a href="https://github.com" style="color:var(--muted)">GitHub Pages</a></div>
-    </footer>
+<section id="about">
+  <h2>About Me</h2>
+  <div class="card">
+    <p>I am a results-driven Digital Marketing and Analytics Expert with a strong background in SEO, PPC, Web Analytics, and Marketing Automation. With an MBA in Marketing from NMIMS and over 10+ years of experience, I specialize in Google Ads, LinkedIn & Facebook Advertising, SEO, Google Looker Studio, Google Tag Manager, SAS, and SQL.</p>
   </div>
+</section>
 
-  <script>
-    // simple active nav link on scroll
-    const navLinks = document.querySelectorAll('.nav-link');
-    const sections = Array.from(navLinks).map(l => document.querySelector(l.getAttribute('href')));
+<section id="experience">
+  <h2>Experience</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Digital Marketing Manager — Plymovent Inc. (2024 - Present)</h3>
+      <p>Managed $250K monthly budget, grew revenue to $734K in 2024, led campaigns (Breast Cancer Awareness +75.36% sales), automated 90% reporting, and redesigned website.</p>
+    </div>
+    <div class="card">
+      <h3>Digital Marketing Specialist — Plymovent Inc. (2023 - 2024)</h3>
+      <p>Executed Google/LinkedIn/Facebook campaigns, managed content calendars, improved engagement, and supported e-commerce strategy.</p>
+    </div>
+    <div class="card">
+      <h3>Paid/SEO Specialist — CML (2022 - 2023)</h3>
+      <p>Improved SEO rankings, reduced CPC by 58%, ran A/B tests, and built analytics dashboards.</p>
+    </div>
+    <div class="card">
+      <h3>Marketing Specialist — Immigrate Software (2022)</h3>
+      <p>Boosted Google Ads clicks by 69%, improved SEO, redesigned pages, and implemented GTM.</p>
+    </div>
+    <div class="card">
+      <h3>Deputy Manager, Digital Marketing — WNS (2017 - 2022)</h3>
+      <p>Oversaw digital presence, managed $55K quarterly budget, automated reports, and increased traffic by 43%.</p>
+    </div>
+    <div class="card">
+      <h3>Deputy Manager — AskMeBazaar (2015 - 2017)</h3>
+      <p>Managed SQL databases, automated reporting, and built KPI dashboards.</p>
+    </div>
+  </div>
+</section>
 
-    function setActive(){
-      const scrollPos = window.scrollY + 80;
-      sections.forEach((sec, idx) => {
-        if(!sec) return;
-        const top = sec.offsetTop;
-        const bottom = top + sec.offsetHeight;
-        if(scrollPos >= top && scrollPos < bottom){
-          navLinks.forEach(n => n.classList.remove('active'));
-          navLinks[idx].classList.add('active');
-        }
-      })
-    }
-    window.addEventListener('scroll', setActive);
-    setActive();
-  </script>
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="grid">
+    <div class="card"><h3>Paid Advertising & PPC Strategy</h3><p>Google Ads, LinkedIn Ads, Facebook Ads</p></div>
+    <div class="card"><h3>SEO & Web Analytics</h3><p>Google Analytics, Omniture Site Catalyst, Looker Studio</p></div>
+    <div class="card"><h3>Marketing Automation</h3><p>Google Tag Manager, CRM, SQL, Data Visualization</p></div>
+    <div class="card"><h3>Brand Growth & Engagement</h3><p>Social Media, Lead Generation, E-commerce</p></div>
+    <div class="card"><h3>E-commerce & Social Media</h3><p>Shopify, WooCommerce, Drupal, Instagram, Twitter, TikTok, YouTube, Amazon Seller Central</p></div>
+  </div>
+</section>
+
+<section id="tools">
+  <h2>Tools</h2>
+  <div class="grid">
+    <div class="card"><h3>Digital Marketing & Analytics</h3><p>Google Ads, PPC, Social Media Ads, SEO, SEM, Website Optimization, Data Analysis & Reporting</p></div>
+    <div class="card"><h3>Web & Marketing Analytics</h3><p>Google Analytics, Google Tag Manager, Looker Studio, SQL, Omniture Site Catalyst, Search Console</p></div>
+    <div class="card"><h3>Performance Marketing & Automation</h3><p>Campaign Management (Google Ads, LinkedIn, Facebook), CRM & Lead Generation, Marketing Automation</p></div>
+    <div class="card"><h3>Marketing & Analytics</h3><p>Google Analytics, Looker Studio, Google Tag Manager, Omniture Site Catalyst</p></div>
+    <div class="card"><h3>SEM</h3><p>Google Ads, Bing Ads, LinkedIn Ads, Facebook Ads, Campaign Optimization & A/B Testing</p></div>
+    <div class="card"><h3>Advertising & PPC</h3><p>Drupal, WordPress, Shopify, WooCommerce, HTML, CSS, Basic JavaScript</p></div>
+    <div class="card"><h3>Data & Reporting</h3><p>SQL, Tableau, SAS, Advanced Excel, Power BI, Google Sheets, Data Automation, Looker Studio Advanced reporting</p></div>
+  </div>
+</section>
+
+<section id="achievements">
+  <h2>Achievements & Leadership</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Achievements</h3>
+      <ul>
+        <li>Plymovent Inc. — Employee of the Month (Nov 2023)</li>
+        <li>WNS Global Services — Star Performer (Jul 2020)</li>
+        <li>WNS Global Services — Standing Ovation Award (Sep 2017)</li>
+        <li>Agilent Technologies — Employee of the Month (Multiple)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Other Recognitions & Leadership Roles</h3>
+      <ul>
+        <li>Mentored & Judged PAN India App Competition</li>
+        <li>WNS Care Foundation – Volunteer & Mentor</li>
+        <li>Deer Park School – Event Coordinator</li>
+        <li>Photography Contributions for Charity</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Influencer Webinar — 12% Lead Generation (2025)</h3>
+      <p>Researched affiliates, onboarding, brand ambassador contracts, and ongoing support.</p>
+    </div>
+    <div class="card">
+      <h3>Ecodrive Campaign — 200% Sales Increase (2024)</h3>
+      <p>Organic + paid marketing across LinkedIn, Instagram, email. "1 Order Plants 5 Trees" tagline. 200% sales increase in 2 months.</p>
+    </div>
+    <div class="card">
+      <h3>Breast Cancer Awareness — 75.36% Sales Growth (2023)</h3>
+      <p>Video content, influencer collaborations, email marketing. 75.36% sales increase.</p>
+    </div>
+    <div class="card">
+      <h3>Automated 90% of Marketing Reports</h3>
+      <p>Integrated LinkedIn, Instagram, CallRail, Google Ads, Facebook, Amazon Seller, WooCommerce. Reduced manual reporting by 99%.</p>
+    </div>
+    <div class="card">
+      <h3>Legal Week Job Campaign — 368% Growth in Conversions (2021)</h3>
+      <p>Optimized Google Ads and LinkedIn campaigns with A/B testing and keyword refinements. 368% increase in conversions.</p>
+    </div>
+    <div class="card">
+      <h3>LinkedIn Growth — 70% Follower Increase in One Month (2022)</h3>
+      <p>Implemented organic content strategy, optimized posts for engagement. 70% increase in LinkedIn followers.</p>
+    </div>
+  </div>
+</section>
+
 </body>
 </html>
