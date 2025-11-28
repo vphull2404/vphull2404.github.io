@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Your Name — Portfolio</title>
+  <meta name="description" content="Portfolio — Your Name | Frontend Developer" />
+  <style>
+    :root{
+      --bg: #2a3a50;
+      --card: #192638;
+      --muted: #9fb0c6;
+      --accent: #2ec4b6;
+      --glass: rgba(255,255,255,0.03);
+      --text: #e6f0f6;
+      --max-width: 1000px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;}
+    body{
+      margin:0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: linear-gradient(180deg,var(--bg), #213247 120%);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.5;
+    }
+
+    .container{max-width:var(--max-width);margin:0 auto;padding:36px 20px;}
+
+    /* Header / Nav */
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:10px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:44px;height:44px;border-radius:8px;background:var(--card);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--accent);font-size:18px}
+    .brand h1{margin:0;font-size:1.1rem}
+    nav ul{display:flex;gap:12px;list-style:none;margin:0;padding:0}
+    nav a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:8px;font-size:0.95rem}
+    nav a:hover, nav a.active{color:var(--text);background:var(--glass)}
+
+    /* Hero */
+    .hero{display:flex;flex-direction:column;gap:18px;padding:28px 0}
+    .hero .intro{display:flex;gap:20px;align-items:center}
+    .intro .left{flex:1}
+    .intro h2{margin:0;font-size:1.9rem}
+    .intro p{margin:8px 0 0;color:var(--muted)}
+    .cta{margin-top:12px}
+    .btn{display:inline-block;background:var(--accent);color:#072627;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600}
+
+    /* Grid / Cards */
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:18px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);padding:18px;border-radius:12px;transition:transform .35s cubic-bezier(.2,.9,.2,1), box-shadow .35s, background .35s;backdrop-filter:blur(6px)}
+    .card:hover{transform:translateY(-8px) scale(1.02);box-shadow:0 18px 40px rgba(5,10,20,0.5);background:linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.015))}
+    .card h3{margin:0 0 8px}
+    .muted{color:var(--muted);font-size:0.95rem}
+
+    /* Projects */
+    .projects .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    .tag{font-size:0.8rem;padding:6px 8px;border-radius:999px;background:rgba(255,255,255,0.02);color:var(--muted);border:1px solid rgba(255,255,255,0.02)}
+    .project-links{margin-top:12px}
+    .project-links a{color:var(--accent);text-decoration:none;margin-right:12px}
+
+    /* Sections */
+    section{padding:26px 0;border-top:1px solid rgba(255,255,255,0.02)}
+    section h2{margin:0 0 12px}
+
+    /* Footer */
+    footer{padding:28px 0;color:var(--muted);font-size:0.95rem}
+
+    /* Responsive */
+    @media (min-width:900px){
+      .hero{flex-direction:row;align-items:center}
+      .intro h2{font-size:2.4rem}
+    }
+
+    /* Smooth scroll active state detection (simple) */
+    html{scroll-behavior:smooth}
+
+    /* small helper */
+    .small{font-size:0.9rem;color:var(--muted)}
+
+    /* contact card */
+    .contact-card{display:flex;flex-direction:column;gap:10px}
+    .contact-card a{color:var(--accent);text-decoration:none}
+
+    /* subtle separator */
+    .sep{height:1px;background:rgba(255,255,255,0.02);margin:14px 0;border-radius:2px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">Y</div>
+        <div>
+          <h1>Your Name</h1>
+          <div class="small">Frontend Developer • Location</div>
+        </div>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="hero">
+        <div class="intro">
+          <div class="left">
+            <h2>Hello — I’m <strong>Your Name</strong></h2>
+            <p class="muted">I build modern, accessible, and responsive web apps. I focus on frontend engineering and user experience.</p>
+            <div class="cta">
+              <a class="btn" href="#projects">See projects</a>
+            </div>
+          </div>
+          <div class="right small muted" style="min-width:220px;text-align:right">
+            <div>Available for work • Open to opportunities</div>
+            <div style="margin-top:10px">Email: <a href="mailto:you@example.com" style="color:var(--accent)">you@example.com</a></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <h2>About</h2>
+        <div class="card">
+          <p>I’m a frontend developer with experience building production web applications. I enjoy learning new frameworks and creating accessible, performative interfaces.</p>
+          <div class="sep"></div>
+          <p class="small">Tech interests: performance, accessibility, React, design systems.</p>
+        </div>
+      </section>
+
+      <section id="experience">
+        <h2>Experience</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Frontend Engineer — Company A</h3>
+            <div class="muted">2022 — Present</div>
+            <p>Worked on the core UI, improved performance, and led accessibility efforts.</p>
+          </div>
+          <div class="card">
+            <h3>Web Developer — Company B</h3>
+            <div class="muted">2019 — 2022</div>
+            <p>Built customer-facing landing pages and interactive dashboards.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills">
+        <h2>Skills & Tools</h2>
+        <div class="grid">
+          <div class="card">
+            <h3>Frontend</h3>
+            <p class="muted">HTML • CSS • JavaScript • React • TypeScript</p>
+          </div>
+          <div class="card">
+            <h3>Tools</h3>
+            <p class="muted">Git • GitHub • Vercel • Figma</p>
+          </div>
+          <div class="card">
+            <h3>Other</h3>
+            <p class="muted">Accessibility • Testing • Performance</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2>Projects</h2>
+        <div class="grid projects">
+          <article class="card">
+            <h3>Project One</h3>
+            <p class="muted">Short description of the project — what it does and your role.</p>
+            <div class="project-links">
+              <a href="#">Demo</a>
+              <a href="#">Code</a>
+            </div>
+            <div class="meta" style="margin-top:12px">
+              <span class="tag">React</span>
+              <span class="tag">CSS</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Project Two</h3>
+            <p class="muted">Short description of the project and what technologies you used.</p>
+            <div class="project-links">
+              <a href="#">Demo</a>
+              <a href="#">Code</a>
+            </div>
+            <div class="meta" style="margin-top:12px">
+              <span class="tag">Vanilla JS</span>
+              <span class="tag">Netlify</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Project Three</h3>
+            <p class="muted">Short description and results.</p>
+            <div class="project-links">
+              <a href="#">Demo</a>
+              <a href="#">Code</a>
+            </div>
+            <div class="meta" style="margin-top:12px">
+              <span class="tag">Node</span>
+              <span class="tag">Express</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <div class="card contact-card">
+          <p class="small">Interested in working together? Reach out.</p>
+          <div>Email: <a href="mailto:you@example.com">you@example.com</a></div>
+          <div>LinkedIn: <a href="#">your-linkedin</a></div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="small">Built with ❤️ • <a href="https://github.com" style="color:var(--muted)">GitHub Pages</a></div>
+    </footer>
+  </div>
+
+  <script>
+    // simple active nav link on scroll
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = Array.from(navLinks).map(l => document.querySelector(l.getAttribute('href')));
+
+    function setActive(){
+      const scrollPos = window.scrollY + 80;
+      sections.forEach((sec, idx) => {
+        if(!sec) return;
+        const top = sec.offsetTop;
+        const bottom = top + sec.offsetHeight;
+        if(scrollPos >= top && scrollPos < bottom){
+          navLinks.forEach(n => n.classList.remove('active'));
+          navLinks[idx].classList.add('active');
+        }
+      })
+    }
+    window.addEventListener('scroll', setActive);
+    setActive();
+  </script>
+</body>
+</html>
