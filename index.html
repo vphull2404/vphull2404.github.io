@@ -1,156 +1,426 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio — Digital Marketer</title>
-<style>
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #1a2537;
-    color: #c1c8ce;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* center the main content */
-    padding: 40px 20px;
-  }
-
-  /* Header aligned left */
-  .header {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    margin-bottom: 40px;
-    width: 100%;
-    max-width: 900px; /* same width as main card */
-  }
-  .header-square {
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, #ff7b00, #ff00c8);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-weight: bold;
-    font-size: 24px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-  }
-  .header-text {
-    display: flex;
-    flex-direction: column;
-  }
-  .header-text h1 {
-    font-size: 36px;
-    color: white;
-    line-height: 1.1;
-  }
-  .header-text h2 {
-    font-size: 18px;
-    color: #c1c8ce;
-    margin-top: 5px;
-  }
-
-  /* Main card centered */
-  .main-card {
-    background-color: #2a3a51;
-    border-radius: 12px;
-    padding: 40px;
-    display: flex;
-    gap: 40px;
-    max-width: 900px;
-    width: 100%;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
-  }
-
-  /* Left column (hero sentence) */
-  .hero {
-    flex: 0 0 40%; /* 40% of the card */
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    font-size: 28px;
-    font-weight: bold;
-    line-height: 1.3;
-    white-space: nowrap;
-  }
-  .highlight {
-    background: linear-gradient(90deg, #ff7b00, #ff00c8);
-    -webkit-background-clip: text;
-    color: transparent;
-  }
-  .subtitle {
-    color: #ffffff;
-  }
-
-  /* Right column (About Me) */
-  .about-me {
-    flex: 0 0 60%; /* 60% of the card */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: #354459;
-    padding: 20px;
-    border-radius: 12px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-    cursor: pointer;
-  }
-  .about-me:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-    background-color: #3d5266;
-  }
-  .about-me h2 {
-    font-size: 24px;
-    color: #ffffff;
-    margin-bottom: 15px;
-  }
-  .about-me p {
-    font-size: 16px;
-    color: #c1c8ce;
-    line-height: 1.6;
-  }
-
-  /* Responsive */
-  @media (max-width: 768px) {
-    .header { justify-content: center; flex-direction: column; align-items: center; }
-    .hero, .about-me {
-      flex: 1 1 100%;
-      justify-content: center;
-      text-align: center;
-      white-space: normal;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Varun Phull — Digital Marketing Manager</title>
+  <style>
+    /* ========================= */
+    /* VARIABLES & BASE STYLES */
+    /* ========================= */
+    :root {
+      --bg: #1a2638;
+      --card: #2a3a50;
+      --text: #e6eef6;
+      --muted: #b0b8c0;
+      --accent1: #ff6b3d;
+      --accent2: #b74fff;
+      --radius: 12px;
+      --maxw: 1200px;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     }
-    .hero { font-size: 22px; }
-  }
-</style>
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 24px;
+      display: flex;
+      justify-content: center;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    h1, h2, h3, h4 { font-weight: 700; }
+
+    .shell { width: 100%; max-width: var(--maxw); }
+
+    .section {
+      background: var(--card);
+      padding: 32px;
+      border-radius: var(--radius);
+      margin-bottom: 32px;
+      box-shadow: var(--shadow);
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+
+    .section:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    }
+
+    .headline {
+      font-size: 36px;
+      margin: 12px 0;
+      line-height: 1.2;
+    }
+
+    .accent {
+      background: linear-gradient(90deg, var(--accent1), var(--accent2));
+      -webkit-background-clip: text;
+      color: transparent;
+      animation: gradient 3s infinite alternate;
+    }
+
+    @keyframes gradient {
+      0% { background-position: 0%; }
+      100% { background-position: 100%; }
+    }
+
+    .muted { color: var(--muted); }
+
+    .row { display: flex; gap: 24px; }
+    .col { flex: 1; }
+
+    @media(max-width:880px) { .row { flex-direction: column; } }
+
+    /* HEADER */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 32px;
+    }
+
+    .brand {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .logo {
+      width: 64px;
+      height: 64px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--accent1), var(--accent2));
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      font-size: 22px;
+      color: #fff;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .lead { color: var(--muted); font-size: 14px; }
+
+    /* HERO */
+    .hero {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .hero-card {
+      padding: 24px;
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      min-width: 280px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    /* SERVICES */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    @media(max-width:800px) { .services { grid-template-columns: repeat(2, 1fr); } }
+
+    .service {
+      padding: 24px;
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+
+    .service:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    }
+
+    /* VALUES */
+    .values {
+      display: flex;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    @media(max-width:720px) { .values { flex-direction: column; } }
+
+    .value {
+      flex: 1;
+      padding: 24px;
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+
+    .value:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    }
+
+    /* PROJECTS */
+    .projects-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      margin-top: 24px;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+    }
+
+    .project-img {
+      width: 100%;
+      height: 400px; /* increased height for full image visibility */
+      object-fit: contain; /* show full image without cropping */
+      background-color: #0f1825; /* subtle background for transparency padding */
+      display: block;
+    }
+
+    .project-content {
+      padding: 20px;
+    }
+
+    .project-content h4 {
+      font-size: 20px;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+
+    .project-content p {
+      font-size: 15px;
+      color: var(--muted);
+    }
+
+    .project-tags {
+      margin-top: 10px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .project-tags .tag {
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.05);
+      font-size: 13px;
+    }
+
+    /* CONTACT */
+    .contact-card {
+      padding: 24px;
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .contact-card a {
+      color: var(--accent1);
+      text-decoration: underline;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 32px;
+    }
+  </style>
 </head>
 <body>
+  <div class="shell">
 
-  <!-- Header aligned left -->
-  <div class="header">
-    <div class="header-square">VP</div>
-    <div class="header-text">
-      <h1>Varun</h1>
-      <h2>B2B/B2C Digital Marketer</h2>
+    <!-- HEADER -->
+    <header>
+      <div class="brand">
+        <div class="logo">VP</div>
+        <div>
+          <h1>Varun Phull</h1>
+          <p class="lead">Digital Marketing Manager — B2B/B2C Digital Marketing Manager</p>
+        </div>
+      </div>
+      <div class="muted">Portfolio</div>
+    </header>
+
+    <main>
+
+      <!-- HERO -->
+      <section class="section hero">
+        <div class="col">
+          <div class="headline">I create marketing that <span class="accent">tells stories</span> and drives results.</div>
+          <p class="muted">Specializing in social media strategy, paid campaigns, SEO & content, Email marketing, Marketing Analytics using python and even machine learning models, and brand identity. Explore projects that show my approach, creativity, and measurable outcomes.</p>
+        </div>
+        <div class="hero-card">
+          <h4>Quick Overview</h4>
+          <p class="muted">Services: Social Media, Paid Ads, SEO & Content, Branding, Analytics, Landing Pages.</p>
+        </div>
+      </section>
+
+      <!-- ABOUT & SERVICES -->
+      <section class="section">
+        <div class="row">
+          <div class="col">
+            <h3>About Me</h3>
+            <p class="muted">I’m a seasoned digital marketer with over 8 years of experience in the marketing field, thriving on turning challenges into opportunities. Passionate about crafting impactful strategies, I aim to deliver results that speak louder than words.</p>
+
+            <h4 style="margin-top:16px">Mission</h4>
+            <p class="muted">To help small businesses and brands tell bigger stories and convert attention into customers through thoughtful digital marketing strategies and creative execution.</p>
+
+            <h4 style="margin-top:16px">Vision</h4>
+            <p class="muted">To be known for campaigns that are remembered and measured — bold ideas that generate real growth.</p>
+          </div>
+
+          <div class="col">
+            <h3>Services</h3>
+            <div class="services">
+              <div class="service"><h4>Social Media</h4><p class="muted">Content calendars, creative concepts, and community growth strategies.</p></div>
+              <div class="service"><h4>Paid Ads</h4><p class="muted">Campaign setup & optimization for Meta, Instagram, and Google Ads.</p></div>
+              <div class="service"><h4>SEO & Content</h4><p class="muted">Keyword research, on-page SEO, off-page SEO, backlinks, anchor text, and blog content.</p></div>
+              <div class="service"><h4>Branding</h4><p class="muted">Visual identity, tone of voice, and asset design.</p></div>
+              <div class="service"><h4>Analytics</h4><p class="muted">Dashboards, reporting, and actionable insights using Python.</p></div>
+              <div class="service"><h4>Landing Pages</h4><p class="muted">Conversion-focused pages with A/B testing.</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- VALUES -->
+      <section class="section">
+        <h3>Values & Approach</h3>
+        <div class="values">
+          <div class="value">
+            <h4>Values</h4>
+            <ul class="muted">
+              <li>Curiosity — Test & iterate</li>
+              <li>Clarity — Simple, measurable goals</li>
+              <li>Creativity — Bold ideas with purpose</li>
+              <li>Honesty — Being honest with work and relations</li>
+            </ul>
+          </div>
+          <div class="value">
+            <h4>Approach</h4>
+            <p class="muted">Audit → Strategy → Execution → Optimize. Mixing bold creativity with data-driven optimization to achieve goals.</p>
+          </div>
+          <div class="value">
+            <h4>What I Love</h4>
+            <p class="muted">Helping founders get first customers, launching campaigns, and building engaged communities, and SEO.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section class="section">
+        <h3>Projects I've Done</h3>
+        <p class="muted">Examples of projects with images, detailed descriptions, results, and skills/tags.</p>
+
+        <div class="projects-grid">
+
+          <!-- Project 1 -->
+          <div class="project-card">
+            <img class="project-img" src="royalracks_.png" alt="Project 1">
+            <div class="project-content">
+              <h4>Project 1: Local SEO & Website Development for Small Business</h4>
+              <p class="muted">Developed a budget-friendly HTML website for a client, incorporating SEO best practices to improve online visibility. Focused on optimizing the site for the keyword “rack” and targeting local search in Chikhli, Gujarat, India. Successfully helped the client’s website appear in local search results, enhancing their reach and visibility.</p>
+              <p class="muted"><strong>Results:</strong> Ranked in local search for "rack" in Chikhli, Gujarat, India; increased website traffic and inquiries from local customers.</p>
+              <div class="project-tags">
+                <span class="tag">Website Development</span>
+                <span class="tag">SEO</span>
+                <span class="tag">Local Search</span>
+                <span class="tag">HTML</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-card">
+  <img class="project-img" src="mailchimp.jpg" alt="Project 2">
+  <div class="project-content">
+    <h4>Project 2 — Email Marketing Campaign (Mailchimp)</h4>
+    <p class="muted">
+      Designed and implemented a targeted email marketing campaign using <strong>Mailchimp</strong> for a local business client. 
+      The project involved audience segmentation, automation setup, and performance tracking to increase engagement and conversion rates.
+    </p>
+    <p class="muted"><strong>Results:</strong> Achieved an increase in open rate and a 15% boost in click-through rate within the first two campaigns.</p>
+    <div class="project-tags">
+      <span class="tag">Email Marketing</span>
+      <span class="tag">Mailchimp</span>
+      <span class="tag">Automation</span>
+      <span class="tag">Audience Segmentation</span>
+      <span class="tag">Analytics</span>
+      <span class="tag">Campaign Optimization</span>
     </div>
   </div>
+</div>
 
-  <!-- Main card centered with 40/60 split -->
-  <div class="main-card">
-    <!-- Left column: hero sentence -->
-    <div class="hero">
-      I am <span class="highlight">B2B/B2C Digital Marketer</span> and <span class="subtitle">MBA (Marketing)</span>
-    </div>
 
-    <!-- Right column: About Me -->
-    <div class="about-me">
-      <h2>About Me</h2>
-      <p>Digital Marketing Leader & Brand Growth Strategist specializing in paid ads, automation, and analytics. I run high-performing campaigns on Google, LinkedIn, and Facebook to drive measurable brand growth.</p>
+          <!-- Project 3 -->
+          <div class="project-card">
+  <img class="project-img" src="google_ads.jpg" alt="Google Ads Project">
+  <div class="project-content">
+    <h4>Project 3: Google Ads Campaign — Lead Generation</h4>
+    <p class="muted">
+      Planned and executed high-performing Google Ads campaigns focused on lead generation and brand visibility. 
+      Conducted keyword research, optimized ad copy, and implemented A/B testing to improve campaign efficiency.
+    </p>
+    <p class="muted"><strong>Results:</strong> Achieved a 12% increase in CTR and a 9% boost in conversion rate within one month.</p>
+    <div class="project-tags">
+      <span class="tag">Google Ads</span>
+      <span class="tag">PPC</span>
+      <span class="tag">A/B Testing</span>
+      <span class="tag">Lead Generation</span>
     </div>
   </div>
+</div>
 
+
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="section contact-card">
+        <h3>Contact Me</h3>
+        <p><strong>Name:</strong> Anas Ansari</p>
+        <p><strong>Email:</strong> <a href="mailto:anas.ansari3016@gmail.com">anas.ansari3016@gmail.com</a></p>
+        <p><strong>Phone:</strong> <a href="tel:+16478613001">+1-647-861-3001</a></p>
+        <p><strong>Location:</strong> Canada</p>
+      </section>
+
+    </main>
+
+    <footer>
+      © 2025 Anas Ansari — Digital Marketing Portfolio
+    </footer>
+
+  </div>
 </body>
 </html>
+
