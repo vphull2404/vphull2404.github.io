@@ -259,6 +259,56 @@
 
 
     
+
+
+              .carousel {
+                position: relative;
+                overflow: hidden;
+                border-radius: 8px;
+              }
+              
+              .carousel-track {
+                display: flex;
+                transition: transform 0.4s ease;
+              }
+              
+              .carousel img {
+                width: 100%;
+                flex-shrink: 0;
+                border-radius: 8px;
+              }
+              
+              .carousel-btn {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                background: rgba(0, 0, 0, 0.5);
+                color: #fff;
+                border: none;
+                font-size: 20px;
+                padding: 6px 10px;
+                cursor: pointer;
+                border-radius: 50%;
+              }
+              
+              .carousel-btn.prev {
+                left: 10px;
+              }
+              
+              .carousel-btn.next {
+                right: 10px;
+              }
+              
+              .carousel-btn:hover {
+                background: rgba(0, 0, 0, 0.7);
+              }
+              
+              
+              
+
+    
+
+    
     /* FOOTER */
     footer {
       text-align: center;
@@ -524,20 +574,39 @@ I have successfully led multi-platform digital campaigns, automated complex repo
                       </div>        
 
 
-          <!-- Project 9 -->
-          <div class="project-card">
-            <img class="project-img" src="Plymovent Googleads 2024.jpg" alt="Googleads 2024">
-              <div class="project-content">
-              <h4>PLYMOVENT | Google Ads (May 2024 - Nov 2024)</h4>
-              <p class="muted"><strong>Project Summary:</strong>Plymovent, a Netherlands-based organization, operates in North America. I work in their Canadian office as a Digital Marketing Manager, overseeing Google Ads campaigns. Plymovent had never run Google Ads in North America before, so we started everything from scratch. This included doing keyword research, setting up the campaigns, configuring tracking with Tag Manager, setting up analytics, planning budgets, and more.</p>
-               <p class="muted"><strong>Outcome:</strong> We launched the campaign in May 2024, and after continuous optimization, we saw significant improvements, achieving 206 conversions (filling out a contact form) by November 2024.</p>
-              </div>
-            </div>
-          </div>
+                        <!-- Project 9 -->
+                        <div class="project-card">
+                        
+                          <div class="carousel">
+                            <div class="carousel-track">
+                              <img src="Plymovent Googleads 2024.jpg" alt="Google Ads Dashboard 2024">
+                              <!-- Add more images here later -->
+                              <!-- <img src="plymovent-keywords.jpg" alt="Keyword Research"> -->
+                              <!-- <img src="plymovent-conversions.jpg" alt="Conversions Report"> -->
+                            </div>
+                        
+                            <button class="carousel-btn prev">‹</button>
+                            <button class="carousel-btn next">›</button>
+                          </div>
+                        
+                          <div class="project-content">
+                            <h4>PLYMOVENT | Google Ads (May 2024 - Nov 2024)</h4>
+                            <p class="muted">
+                              <strong>Project Summary:</strong>
+                              Plymovent, a Netherlands-based organization operating in North America. I work from the Canadian office as a Digital Marketing Manager, leading the launch of Google Ads from scratch, including keyword research, campaign setup, tracking via Tag Manager, analytics configuration, and budget planning.
+                            </p>
+                            <p class="muted">
+                              <strong>Outcome:</strong>
+                              Launched in May 2024 and continuously optimized, resulting in 206 contact form conversions by November 2024.
+                            </p>
+                          </div>
+                        
+                        </div>
 
 
 
-                
+
+
                     <!-- VALUES -->
             <section class="section">
               <h3>Other Noteable Projects</h3>
